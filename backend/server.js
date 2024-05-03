@@ -5,7 +5,6 @@ import router from "./routes/router.js";
 
 const app = express();
 
-
 const connect = async () => {
   try {
     await mongoose.connect("mongodb://127.0.0.1:27017/level");
@@ -23,7 +22,7 @@ mongoose.connection.on("disconnected", () => {
   console.log("Mongodb disconnected...");
 });
 
-app.use(express.json()); 
+app.use(express.json());
 app.use(cors());
 app.use("/backend", router);
 
